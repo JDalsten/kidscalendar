@@ -8,7 +8,7 @@ const startTime = () => {
   m = checkTime(m);
   s = checkTime(s);
   document.querySelector("#clock").textContent = h + ":" + m + ":" + s;
-  adjustScheduleScroll(h,m);
+  //adjustScheduleScroll(h,m);
   var t = setTimeout(startTime, 1000);
 }
 
