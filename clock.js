@@ -8,6 +8,7 @@ const startTime = () => {
   m = checkTime(m);
   s = checkTime(s);
   document.querySelector("#clock").textContent = h + ":" + m + ":" + s;
+  adjustScheduleScroll(h,m);
   var t = setTimeout(startTime, 1000);
 }
 
@@ -17,7 +18,9 @@ const checkTime = (i) => {
   return i;
 }
 
-const adjustScheduleScroll = (amount) => {
+const adjustScheduleScroll = (hours, minutes) => {
+  timeInMinutes = hours*60 + minutes;
+  let amount = - (200/1440) * timeInMinutes;
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
   schedule.style.height = 270 + amount + "vh";
