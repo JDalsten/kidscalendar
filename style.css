@@ -66,32 +66,39 @@ body {
 
 #scheduleContainer {
     height: 70vh;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #schedule {
-  transform: translateY(-50px);
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+  overflow: hidden;
 }
 
 .dayFormat {
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 200vh;
-  width: 100vw;
 }
 
-.day1 {
+#today {
   background: #686a6b;
+  height: 200vh;
 }
 
-.day2 {
-  background: #333;
+#tomorrow {
+  height: 70vh;
+  background: url(moon.jpeg); 
+  background-size: cover;
+  background-position: center;
+}
+
+.content-grower {
+  flex-grow: 1;
 }
 
 .hourBlock {
-  flex-grow: 1;
-  background: #ddd;
   width: 100%;
   padding: 0px;
   margin: 0px;
