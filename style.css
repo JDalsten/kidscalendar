@@ -11,11 +11,11 @@ body {
 }
 
 #clock {
-  font-size: 10vh;
+  font-size: 10em;
 }
 
 .big {
-  font-size: 20vh;
+  font-size: 20em;
 }
 .c100 {
   position: relative;
