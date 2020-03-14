@@ -1,10 +1,11 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 #top {
-  height: 30vh;
+  height: 30%;
   width: 100%;
   text-align: center;
 }
@@ -65,30 +66,29 @@ body {
 } 
 
 #scheduleContainer {
-    height: 70vh;
+    height: 70%;
     overflow: scroll;
 }
 
 #schedule {
-  display: flex;
-  flex-direction: column;
-  height: 200vh;
+
+  height: 2000px;
   overflow: hidden;
 }
 
 .dayFormat {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 #today {
   background: #686a6b;
-  height: 200vh;
+  height: 2000px;
 }
 
 #tomorrow {
-  height: 70vh;
+  height: 700px;
   background: url(moon.jpeg); 
   background-size: cover;
   background-position: center;
