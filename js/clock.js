@@ -8,7 +8,8 @@ const startTime = () => {
   m = checkTime(m);
   s = checkTime(s);
   document.querySelector("#clock").textContent = h + ":" + m + ":" + s;
-  adjustScheduleScroll(h*1,m*1);
+  //adjustScheduleScroll(h*1,m*1);
+  adjustScheduleScroll(6,25);
   var t = setTimeout(startTime, 1000);
 }
 
@@ -24,9 +25,9 @@ const adjustScheduleScroll = (hours, minutes) => {
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
   schedule.style.height = 2700 + amount + "px";
-  let separatorContainer = document.querySelector(".separatorContainer");
-  separatorContainer.style.top = (amount + 8)*-1;
-  let currentTimeLine = document.querySelector(".separator");
+  let currentTimeLineContainer = document.querySelector(".currentTimeLineContainer");
+  currentTimeLineContainer.style.top = (amount + 8)*-1;
+  let currentTimeLine = document.querySelector(".currentTimeLine");
   currentTimeLine.textContent = `${hours}:${minutes}`;
   let i;
   console.log(amount);
