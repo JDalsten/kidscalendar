@@ -67,7 +67,8 @@ body {
 
 #scheduleContainer {
     height: 70%;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 #schedule {
