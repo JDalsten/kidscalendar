@@ -102,6 +102,7 @@ body {
 }
 
 #tomorrow {
+  
   height: 700px;
   background: url(../images/night.svg); 
   background-size: contain;
