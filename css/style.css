@@ -6,7 +6,6 @@ body {
 }
 
 #top {
-  padding-top: 20px;
   height: 30%;
   width: 100%;
   text-align: center;
@@ -70,7 +69,6 @@ body {
 }
 
 #scheduleContainer {
-  padding: 20px;
   height: 70%;
   overflow-x: hidden;
   overflow-y: scroll;
