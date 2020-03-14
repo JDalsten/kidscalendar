@@ -7,9 +7,9 @@ const startTime = () => {
   h = checkTime(h);
   m = checkTime(m);
   s = checkTime(s);
-  document.querySelector("#clock").textContent = h + ":" + m + ":" + s;
-  //adjustScheduleScroll(h*1,m*1);
-  adjustScheduleScroll(6,25);
+  document.querySelector("#clock").textContent = `${h}:${m}:${s}`;
+  adjustScheduleScroll(h*1,m*1);
+  //adjustScheduleScroll(03,02);
   var t = setTimeout(startTime, 1000);
 }
 
@@ -24,15 +24,15 @@ const adjustScheduleScroll = (hours, minutes) => {
   let amount = - (2000/1440) * timeInMinutes;
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
-  schedule.style.height = 2700 + amount + "px";
+  //schedule.style.height = 2300 + amount + "px";
   let currentTimeLineContainer = document.querySelector(".currentTimeLineContainer");
-  currentTimeLineContainer.style.top = (amount + 8)*-1;
+  currentTimeLineContainer.style.top = (amount-59.5)*-1;
   let currentTimeLine = document.querySelector(".currentTimeLine");
-  currentTimeLine.textContent = `${hours}:${minutes}`;
+  currentTimeLine.textContent = `${checkTime(hours)}:${checkTime(minutes)}`;
   let i;
   console.log(amount);
   for (i = 0; i < dayFormat.length; i++) {
-    dayFormat[i].style.transform = "translateY(" + amount + "px)";
+   // dayFormat[i].style.transform = "translateY(" + amount + "px)";
 
   }
 }

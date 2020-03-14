@@ -2,14 +2,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-
-
-
-  font-family: 'Roboto Mono', monospace;
-
-
-
-
+  font-family: "Roboto Mono", monospace;
 }
 
 #top {
@@ -45,7 +38,7 @@ body {
   left: 0.08em;
   top: 0.08em;
   border-radius: 50%;
-} 
+}
 
 .slice {
   position: absolute;
@@ -59,7 +52,7 @@ body {
 }
 .bar {
   position: absolute;
-  border: 0.08em solid #59968A;
+  border: 0.08em solid #59968a;
   width: 0.84em;
   height: 0.84em;
   clip: rect(0em, 0.5em, 1em, 0em);
@@ -68,26 +61,28 @@ body {
 }
 .fill {
   position: absolute;
-  border: 0.08em solid #59968A;
+  border: 0.08em solid #59968a;
   width: 0.84em;
   height: 0.84em;
   clip: rect(0em, 0.5em, 1em, 0em);
   border-radius: 50%;
   transform: rotate(180deg);
-} 
+}
 
 #scheduleContainer {
-    padding-top: 30px;
-    height: 70%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-/*     background-color: aqua;
- */}
+  padding: 20px;
+  height: 70%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #f2f1f8;
+  /*     background-color: aqua;
+ */
+}
 
 #schedule {
- /*  background-color: aquamarine; */
-  height: 2000px;
 
+  /*  background-color: aquamarine; */
+  height: 2000px;
 }
 
 .dayFormat {
@@ -97,14 +92,16 @@ body {
 }
 
 #today {
+  padding-top: 70px;
   position: relative;
   height: 2000px;
+  background-color: #fff;
+  border-radius: 35px;
 }
 
 #tomorrow {
-
-  height: 700px;
-  background: url(../images/night.svg); 
+  height: 300px;
+  background: url(../images/night.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
@@ -124,6 +121,7 @@ body {
 }
 
 .currentTimeLineContainer {
+  z-index: 20;
   position: absolute;
   right: 0;
   top: 1908px;
@@ -138,18 +136,18 @@ body {
   align-items: center;
   text-align: center;
 }
-.currentTimeLine::before, .currentTimeLine::after {
-  content: '';
+.currentTimeLine::before,
+.currentTimeLine::after {
+  content: "";
   flex: 1;
   border-bottom: 1px solid #000;
 }
 .currentTimeLine::before {
-
-  margin-right: .25em;
+  margin-right: 0.25em;
 }
 .currentTimeLine::after {
-  flex-grow: .5;
-  margin-left: .25em;
+  flex-grow: 0.5;
+  margin-left: 0.25em;
 }
 
 .hourTextContainer {
@@ -166,16 +164,17 @@ body {
   align-items: center;
   text-align: center;
 }
-.hourText::before, .hourText::after {
-  content: '';
+.hourText::before,
+.hourText::after {
+  content: "";
   flex: 1;
   border-bottom: 1px solid #eee;
 }
 .hourText::before {
   flex-grow: 1;
-  margin-right: .25em;
+  margin-right: 0.25em;
 }
 .hourText::after {
   flex-grow: 20;
-  margin-left: .25em;
+  margin-left: 0.25em;
 }
