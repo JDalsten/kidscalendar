@@ -30,9 +30,9 @@ const adjustScheduleScroll = (hours, minutes) => {
   let currentTimeLine = document.querySelector(".currentTimeLine");
   currentTimeLine.textContent = `${checkTime(hours)}:${checkTime(minutes)}`;
   let i;
-  console.log(amount);
   for (i = 0; i < dayFormat.length; i++) {
    // dayFormat[i].style.transform = "translateY(" + amount + "px)";
 
   }
 }
+

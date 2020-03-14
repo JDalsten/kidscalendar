@@ -3,6 +3,8 @@
 // Initialise clock on load
 document.addEventListener("DOMContentLoaded", function(){
   startTime();
+  let timelineAnchor = document.querySelector(".currentTimeLine");
+timelineAnchor.scrollIntoView();
 });
 
 const sessionRemaining = (percentage) => {
