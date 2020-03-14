@@ -1,11 +1,4 @@
-window.onload = () => {
-  'use strict';
 
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('./sw.js');
-  }
-}
 
 // Initialise clock on load
 document.addEventListener("DOMContentLoaded", function(){
