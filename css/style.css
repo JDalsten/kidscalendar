@@ -124,7 +124,7 @@ body {
   right: 0;
   top: 1908px;
   width: 150px;
-  color: #000;
+  color: #59968a;
 }
 
 .currentTimeLine {
@@ -138,7 +138,7 @@ body {
 .currentTimeLine::after {
   content: "";
   flex: 1;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #59968a;
 }
 .currentTimeLine::before {
   margin-right: 0.25em;
