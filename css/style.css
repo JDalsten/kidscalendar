@@ -103,10 +103,11 @@ body {
 
 #tomorrow {
   height: 700px;
-  background: url(../images/moon.jpeg); 
-  background-size: cover;
-  background-position: center;
-}
+  background: url(../images/night.svg); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #eee;
 
 .content-grower {
   flex-grow: 1;
