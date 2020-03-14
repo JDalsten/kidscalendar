@@ -108,6 +108,7 @@ body {
   background-repeat: no-repeat;
   background-position: top;
   background-color: #eee;
+}
 
 .content-grower {
   flex-grow: 1;
