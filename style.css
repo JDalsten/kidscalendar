@@ -2,6 +2,14 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+
+
+
+  font-family: 'Roboto Mono', monospace;
+
+
+
+
 }
 
 #top {
@@ -11,7 +19,8 @@ body {
 }
 
 #clock {
-  font-size: 500%;
+  font-size: 300%;
+  font-weight: 300;
 }
 
 .big {
@@ -84,7 +93,7 @@ body {
 }
 
 #today {
-  background: #686a6b;
+ 
   height: 2000px;
 }
 
@@ -103,5 +112,5 @@ body {
   width: 100%;
   padding: 0px;
   margin: 0px;
-  border-top: #000 solid;
+  border-top: #eee solid 1px;
 }
