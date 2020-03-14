@@ -99,7 +99,7 @@ body {
 
 #tomorrow {
   height: 700px;
-  background: url(moon.jpeg); 
+  background: url(../images/moon.jpeg); 
   background-size: cover;
   background-position: center;
 }
