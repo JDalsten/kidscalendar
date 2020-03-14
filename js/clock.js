@@ -24,7 +24,12 @@ const adjustScheduleScroll = (hours, minutes) => {
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
   schedule.style.height = 2700 + amount + "px";
+  let separatorContainer = document.querySelector(".separatorContainer");
+  separatorContainer.style.top = (amount + 8)*-1;
+  let currentTimeLine = document.querySelector(".separator");
+  currentTimeLine.textContent = `${hours}:${minutes}`;
   let i;
+  console.log(amount);
   for (i = 0; i < dayFormat.length; i++) {
     dayFormat[i].style.transform = "translateY(" + amount + "px)";
 
