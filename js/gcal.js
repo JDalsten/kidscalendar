@@ -150,10 +150,17 @@ function listUpcomingEvents() {
     appendPre('Upcoming events:');
 
     if (events.length > 0) {
-        return events;
-
+      for (i = 0; i < events.length; i++) {
+        var event = events[i];
+        var when = event.start.dateTime;
+        if (!when) {
+          when = event.start.date;
+        }
+        appendPre(event.summary + ' (' + when + ')')
+      }
     } else {
       appendPre('No upcoming events found.');
     }
   });
+  return events;
 }
