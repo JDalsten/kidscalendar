@@ -164,7 +164,7 @@ function listUpcomingEvents() {
     console.log(events);
   });
   
-  
+  console.log(events);
 }
 
 
