@@ -36,5 +36,3 @@ const adjustScheduleScroll = (hours, minutes) => {
    
   }
 }
-
-listUpcomingEvents();
