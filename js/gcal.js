@@ -89,9 +89,12 @@ function appendPre(message) {
  * appropriate message is printed.
  */
 function listUpcomingEvents() {
+    let tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
   gapi.client.calendar.events.list({
     'calendarId': 'primary',
     'timeMin': (new Date()).toISOString(),
+    'timeMax': (tomorrow.toISOString(),
     'showDeleted': false,
     'singleEvents': true,
     'maxResults': 10,
