@@ -135,12 +135,13 @@ function appendPre(message) {
  * the authorized user's calendar. If no events are found an
  * appropriate message is printed.
  */
+let sessionList; 
+
 function listUpcomingEvents() {
   var startDay = new Date();
   startDay.setHours(0, 0, 0, 0);
   var endDay = new Date();
   endDay.setHours(23, 59, 59, 999);
-  let sessionList; 
   gapi.client.calendar.events
     .list({
       calendarId: "primary",
@@ -170,10 +171,9 @@ function listUpcomingEvents() {
         appendPre("No upcoming events found.");
       }
     });
-    console.log(sessionList);
 }
 
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new13");
+console.log("new14");
