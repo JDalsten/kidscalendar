@@ -143,7 +143,8 @@ function listUpcomingEvents() {
     'maxResults': 10,
     'orderBy': 'startTime'
   }).then(function(response) {
-    var events = dummyCalendar.result.items;
+    //var events = response.result.items;
+    var events = dummyCalendar;
     console.log(events);
     appendPre('Upcoming events:');
 
