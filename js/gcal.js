@@ -155,7 +155,7 @@ function listUpcomingEvents() {
     .then(function(response) {
       var events = response.result.items;
       sessionList = events;
-      
+      return events;
       console.log(events[0].start.dateTime);
       appendPre("Upcoming events:");
       if (events.length > 0) {
@@ -177,4 +177,4 @@ function listUpcomingEvents() {
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new16");
+console.log("new17");
