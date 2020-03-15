@@ -134,8 +134,7 @@ function listUpcomingEvents() {
     startDay.setHours(0,0,0,0);
     var endDay = new Date();
     endDay.setHours(23,59,59,999);
-    let sessionList;
-  gapi.client.calendar.events.list({
+    let sessionList = gapi.client.calendar.events.list({
     'calendarId': 'primary',
     'timeMin': startDay.toISOString(),
     'timeMax': endDay.toISOString(),
@@ -143,7 +142,8 @@ function listUpcomingEvents() {
     'singleEvents': true,
     'maxResults': 10,
     'orderBy': 'startTime'
-  }).then(function(response) {
+  })
+  /* .then(function(response) {
     var events = response.result.items;
     sessionList = events;
    // var events = dummyCalendar;
@@ -162,7 +162,7 @@ function listUpcomingEvents() {
     } else {
       appendPre('No upcoming events found.');
     }
-  });
+  }) */;
   console.log(sessionList);
   return sessionList;
   }
