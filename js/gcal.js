@@ -154,8 +154,9 @@ function listUpcomingEvents() {
       singleEvents: true,
       maxResults: 10,
       orderBy: "startTime"
-    })
-    .then(function(response) {
+    });
+
+/*     .then(function(response) {
       var events = response.result.items;
       sessionList = events;
       console.log(events[0].start.dateTime);
@@ -172,11 +173,11 @@ function listUpcomingEvents() {
       } else {
         appendPre("No upcoming events found.");
       }
-    });
+    }); */
     
 }
 
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new22");
+console.log("new23");
