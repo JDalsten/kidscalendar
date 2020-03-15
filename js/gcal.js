@@ -163,13 +163,13 @@ function listUpcomingEvents() {
       appendPre('No upcoming events found.');
     }
   });
+  console.log(sessionList);
   return sessionList;
   }
 
 
 const delaythis = () => {
-  var t = setTimeout(startTime, 5000);
   console.log(listUpcomingEvents());
   
 }
-console.log("new5");
+console.log("new6");
