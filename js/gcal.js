@@ -169,7 +169,7 @@ function listUpcomingEvents() {
 
 const delaythis = () => {
   var t = setTimeout(startTime, 5000);
-  console.log(sessionList);
+  console.log(listUpcomingEvents());
   
 }
-console.log("new4");
+console.log("new5");
