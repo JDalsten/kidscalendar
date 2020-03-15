@@ -164,7 +164,7 @@ function listUpcomingEvents() {
     return events;
   });
   
-  
+  return events;
 }
 
 
