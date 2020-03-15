@@ -140,7 +140,8 @@ function listUpcomingEvents() {
   startDay.setHours(0, 0, 0, 0);
   var endDay = new Date();
   endDay.setHours(23, 59, 59, 999);
-  let sessionList = gapi.client.calendar.events
+  let sessionList; 
+  gapi.client.calendar.events
     .list({
       calendarId: "primary",
       timeMin: startDay.toISOString(),
