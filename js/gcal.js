@@ -171,10 +171,9 @@ function listUpcomingEvents() {
         appendPre("No upcoming events found.");
       }
     });
-    console.log(pleasework.result.items);
 }
 
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new17");
+console.log("new18");
