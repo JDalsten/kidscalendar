@@ -13,7 +13,8 @@ body {
 }
 
 #clock {
-  font-size: 150%;
+
+  font-size: 200%;
   font-weight: 300;
 }
 
@@ -26,12 +27,13 @@ body {
   height: 1em;
   border-radius: 50%;
   background-color: #f2f1f8;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 .c100:after {
   content: "";
   position: absolute;
-  background-color: #f2f1f8;
+  background-image: url(../images/lunch.svg);
+  /* background-color: #f2f1f8; */
   height: 0.84em;
   width: 0.84em;
   left: 0.08em;
