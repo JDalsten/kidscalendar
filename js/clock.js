@@ -29,3 +29,10 @@ const adjustScheduleScroll = (hours, minutes) => {
   let currentTimeLine = document.querySelector(".currentTimeLine");
   currentTimeLine.textContent = `${checkTime(hours)}:${checkTime(minutes)}`;
 }
+
+
+let dumDate = dummyCalendar[0].start.dateTime;
+let dumHour = dumDate.substr(11, 2);
+let dumMin = dumDate.substr(14, 2);
+console.log(dumHour);
+console.log(dumMin);
