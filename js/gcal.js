@@ -90,9 +90,9 @@ function appendPre(message) {
  */
 function listUpcomingEvents() {
     var startDay = new Date();
-    start.setHours(0,0,0,0);
+    startDay.setHours(0,0,0,0);
     var endDay = new Date();
-    end.setHours(23,59,59,999);
+    endDay.setHours(23,59,59,999);
     
   gapi.client.calendar.events.list({
     'calendarId': 'primary',
