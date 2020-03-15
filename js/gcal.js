@@ -137,9 +137,8 @@ function appendPre(message) {
  */
 
 
+let sessionList; 
 
-const delaythis = () => {
-    let sessionList; 
 function listUpcomingEvents() {
   var tasty;
   var startDay = new Date();
@@ -157,29 +156,16 @@ function listUpcomingEvents() {
       orderBy: "startTime"
     })
     .then(function(response) {
-      var events = response.result.items;
-      sessionList = events;
-      console.log(events[0].start.dateTime);
-      appendPre("Upcoming events:");
-      if (events.length > 0) {
-        for (i = 0; i < events.length; i++) {
-          var event = events[i];
-          var when = event.start.dateTime;
-          if (!when) {
-            when = event.start.date;
-          }
-          appendPre(event.summary + " (" + when + ")");
-        }
-      } else {
-        appendPre("No upcoming events found.");
-      }
-    });
+        // Handle the results here (response.result has the parsed body).
+        console.log("Response", response);
+      },
+      function(err) { console.error("Execute error", err); });
     
 }
-return sessionList;
+
+const delaythis = () => {
+  listUpcomingEvents
 };
+console.log("new27");
 
-
-
-console.log("new26");
 
