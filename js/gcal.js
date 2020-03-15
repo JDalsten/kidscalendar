@@ -138,11 +138,12 @@ function appendPre(message) {
 let sessionList; 
 
 function listUpcomingEvents() {
+  var tasty;
   var startDay = new Date();
   startDay.setHours(0, 0, 0, 0);
   var endDay = new Date();
   endDay.setHours(23, 59, 59, 999);
-  let pleasework = gapi.client.calendar.events
+  gapi.client.calendar.events
     .list({
       calendarId: "primary",
       timeMin: startDay.toISOString(),
@@ -155,7 +156,7 @@ function listUpcomingEvents() {
     .then(function(response) {
       var events = response.result.items;
       sessionList = events;
-      return events;
+      tasty = events;
       console.log(events[0].start.dateTime);
       appendPre("Upcoming events:");
       if (events.length > 0) {
@@ -171,9 +172,10 @@ function listUpcomingEvents() {
         appendPre("No upcoming events found.");
       }
     });
+    console.log("test"+tasty);
 }
 
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new18");
+console.log("new19");
