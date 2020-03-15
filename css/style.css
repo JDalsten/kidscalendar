@@ -78,6 +78,7 @@ body {
  */
 }
 
+
 #schedule {
 
   /*  background-color: aquamarine; */
@@ -128,6 +129,7 @@ body {
   color: #59968a;
 }
 
+
 .currentTimeLine {
   font-size: 16px;
   z-index: 10;
@@ -147,6 +149,11 @@ body {
 .currentTimeLine::after {
   flex-grow: 0.5;
   margin-left: 0.25em;
+}
+
+.currentTimeLineOffset {
+  position: absolute;
+  top: -60px;
 }
 
 .hourTextContainer {
