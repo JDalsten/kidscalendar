@@ -125,7 +125,7 @@ body {
   position: absolute;
   right: 0;
   top: 1908px;
-  width: 150px;
+  width: 200px;
   color: #59968a;
 }
 
@@ -136,18 +136,20 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
+  font-weight: 500;
 }
 .currentTimeLine::before,
 .currentTimeLine::after {
   content: "";
   flex: 1;
-  border-bottom: 1px solid #59968a;
+  border-bottom: 2px solid #59968a;
 }
 .currentTimeLine::before {
+  flex-grow: 4;
   margin-right: 0.25em;
 }
 .currentTimeLine::after {
-  flex-grow: 0.5;
+  flex-grow: 1;
   margin-left: 0.25em;
 }
 
