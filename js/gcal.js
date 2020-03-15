@@ -139,7 +139,7 @@ function appendPre(message) {
  */
 
 const userSessions = () => {
-    const sessionList;
+    let sessionList;
     function listUpcomingEvents() {
         var tasty;
         var startDay = new Date();
@@ -176,6 +176,7 @@ const userSessions = () => {
             }
           });
       }
+      console.log(sessionList);
       return sessionList;
 }
  
@@ -185,4 +186,4 @@ const userSessions = () => {
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new22");
+console.log("new20");
