@@ -157,11 +157,12 @@ function listUpcomingEvents() {
     })
     .then(function(response) {
         // Handle the results here (response.result has the parsed body).
-        console.log("Response", response.result);
+        sessionList = response.result.items;
+
       },
       function(err) { console.error("Execute error", err); });    
 }
 
-console.log("new28");
+console.log("new29");
 
 
