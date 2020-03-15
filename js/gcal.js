@@ -179,4 +179,5 @@ function listUpcomingEvents() {
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new24");
+console.log("new25");
+console.log(sessionList);
