@@ -148,7 +148,7 @@ function listUpcomingEvents() {
    // var events = dummyCalendar;
     console.log(events[0].start.dateTime);
     appendPre('Upcoming events:');
-
+    return events;
     if (events.length > 0) {
       for (i = 0; i < events.length; i++) {
         var event = events[i];
@@ -162,5 +162,5 @@ function listUpcomingEvents() {
       appendPre('No upcoming events found.');
     }
   });
-  return events;
 }
+console.log(events);
