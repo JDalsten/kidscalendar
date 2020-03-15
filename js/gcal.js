@@ -97,7 +97,9 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = "none";
     signoutButton.style.display = "block";
-    listUpcomingEvents();
+    //listUpcomingEvents();
+    userSessions();
+    
   } else {
     authorizeButton.style.display = "block";
     signoutButton.style.display = "none";
@@ -135,47 +137,52 @@ function appendPre(message) {
  * the authorized user's calendar. If no events are found an
  * appropriate message is printed.
  */
-let sessionList; 
 
-function listUpcomingEvents() {
-  var tasty;
-  var startDay = new Date();
-  startDay.setHours(0, 0, 0, 0);
-  var endDay = new Date();
-  endDay.setHours(23, 59, 59, 999);
-  gapi.client.calendar.events
-    .list({
-      calendarId: "primary",
-      timeMin: startDay.toISOString(),
-      timeMax: endDay.toISOString(),
-      showDeleted: false,
-      singleEvents: true,
-      maxResults: 10,
-      orderBy: "startTime"
-    })
-    .then(function(response) {
-      var events = response.result.items;
-      sessionList = events;
-      tasty = events;
-      console.log(events[0].start.dateTime);
-      appendPre("Upcoming events:");
-      if (events.length > 0) {
-        for (i = 0; i < events.length; i++) {
-          var event = events[i];
-          var when = event.start.dateTime;
-          if (!when) {
-            when = event.start.date;
-          }
-          appendPre(event.summary + " (" + when + ")");
-        }
-      } else {
-        appendPre("No upcoming events found.");
+const userSessions = () => {
+    let sessionList;
+    function listUpcomingEvents() {
+        var tasty;
+        var startDay = new Date();
+        startDay.setHours(0, 0, 0, 0);
+        var endDay = new Date();
+        endDay.setHours(23, 59, 59, 999);
+        gapi.client.calendar.events
+          .list({
+            calendarId: "primary",
+            timeMin: startDay.toISOString(),
+            timeMax: endDay.toISOString(),
+            showDeleted: false,
+            singleEvents: true,
+            maxResults: 10,
+            orderBy: "startTime"
+          })
+          .then(function(response) {
+            var events = response.result.items;
+            sessionList = events;
+            tasty = events;
+            console.log(events[0].start.dateTime);
+            appendPre("Upcoming events:");
+            if (events.length > 0) {
+              for (i = 0; i < events.length; i++) {
+                var event = events[i];
+                var when = event.start.dateTime;
+                if (!when) {
+                  when = event.start.date;
+                }
+                appendPre(event.summary + " (" + when + ")");
+              }
+            } else {
+              appendPre("No upcoming events found.");
+            }
+          });
       }
-    });
-    console.log("test"+tasty);
+      return sessionList;
 }
+ 
+
+
 
 const delaythis = () => {
   console.log(listUpcomingEvents());
 };
-console.log("new19");
+console.log("new20");
