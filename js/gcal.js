@@ -37,6 +37,9 @@ const dummyCalendar = [
         }
     },
   ];
+  var dumhour = dummyCalendar[0].start.dateTime;
+
+  console.log(dumhour);
 
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '454882688468-8q009r6uk11poenblrh2clh9gfn9gr9t.apps.googleusercontent.com';
@@ -143,9 +146,9 @@ function listUpcomingEvents() {
     'maxResults': 10,
     'orderBy': 'startTime'
   }).then(function(response) {
-    //var events = response.result.items;
-    var events = dummyCalendar;
-    console.log(events);
+    var events = response.result.items;
+   // var events = dummyCalendar;
+    console.log(events[0].start.dateTime);
     appendPre('Upcoming events:');
 
     if (events.length > 0) {
