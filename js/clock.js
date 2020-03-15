@@ -20,7 +20,7 @@ const checkTime = (i) => {
 }
 
 const adjustScheduleScroll = (hours, minutes) => {
-  timeInMinutes = hours*60 + minutes;
+  let timeInMinutes = hours*60 + minutes;
   let amount = - (2000/1440) * timeInMinutes;
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
@@ -30,9 +30,23 @@ const adjustScheduleScroll = (hours, minutes) => {
   currentTimeLine.textContent = `${checkTime(hours)}:${checkTime(minutes)}`;
 }
 
+const dailySessions = () => {
+  let i;
+  for (i = 0; i < dummyCalendar.length; i++) {
+    let dumDate = dummyCalendar[i].start.dateTime;
+  let dumHour = Number(dumDate.substr(11, 2));
+  let dumMin = Number(dumDate.substr(14, 2));
 
-let dumDate = dummyCalendar[0].start.dateTime;
-let dumHour = dumDate.substr(11, 2);
-let dumMin = dumDate.substr(14, 2);
-console.log(dumHour);
-console.log(dumMin);
+  let timeInMinutes = dumHour*60 + dumMin;
+  let sessionLocation = (2000/1440) *timeInMinutes ;
+  let sessionEle = document.createElement("DIV");
+  sessionEle.classList.add("session");
+  let today = document.querySelector("#today");
+  today.appendChild(sessionEle);  
+  sessionEle.style.top = (sessionLocation+70); //the +70 is to compensate for padding
+    
+  }
+  
+}
+
+dailySessions();

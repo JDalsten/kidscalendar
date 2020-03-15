@@ -2,7 +2,7 @@ const dummyCalendar = [
     { 
         summary: 'Steven Tyler', 
         start: {
-            dateTime: '2020-03-15T00:15:00+01:00'
+            dateTime: '2020-03-15T15:30:00+01:00'
         },
         end: {
             dateTime: '2020-03-15T01:15:00+01:0'
@@ -12,7 +12,7 @@ const dummyCalendar = [
     { 
         summary: 'Steven Tyler', 
         start: {
-            dateTime: '2020-03-15T00:15:00+01:00'
+            dateTime: '2020-03-15T06:15:00+01:00'
         },
         end: {
             dateTime: '2020-03-15T01:15:00+01:0'
@@ -21,7 +21,7 @@ const dummyCalendar = [
     { 
         summary: 'Steven Tyler', 
         start: {
-            dateTime: '2020-03-15T00:15:00+01:00'
+            dateTime: '2020-03-15T22:00:00+01:00'
         },
         end: {
             dateTime: '2020-03-15T01:15:00+01:0'
@@ -30,7 +30,7 @@ const dummyCalendar = [
     { 
         summary: 'Steven Tyler', 
         start: {
-            dateTime: '2020-03-15T00:15:00+01:00'
+            dateTime: '2020-03-15T18:45:00+01:00'
         },
         end: {
             dateTime: '2020-03-15T01:15:00+01:0'
@@ -148,7 +148,6 @@ function listUpcomingEvents() {
    // var events = dummyCalendar;
     console.log(events[0].start.dateTime);
     appendPre('Upcoming events:');
-    return events;
     if (events.length > 0) {
       for (i = 0; i < events.length; i++) {
         var event = events[i];
@@ -162,5 +161,12 @@ function listUpcomingEvents() {
       appendPre('No upcoming events found.');
     }
   });
+  return events;
 }
-console.log(events);
+
+
+const delaythis = () => {
+  var t = setTimeout(startTime, 5000);
+  console.log(events);
+  
+}
