@@ -1,3 +1,43 @@
+const dummyCalendar = [
+    { 
+        summary: 'Steven Tyler', 
+        start: {
+            dateTime: '2020-03-15T00:15:00+01:00'
+        },
+        end: {
+            dateTime: '2020-03-15T01:15:00+01:0'
+        }
+        
+    },
+    { 
+        summary: 'Steven Tyler', 
+        start: {
+            dateTime: '2020-03-15T00:15:00+01:00'
+        },
+        end: {
+            dateTime: '2020-03-15T01:15:00+01:0'
+        }
+    },
+    { 
+        summary: 'Steven Tyler', 
+        start: {
+            dateTime: '2020-03-15T00:15:00+01:00'
+        },
+        end: {
+            dateTime: '2020-03-15T01:15:00+01:0'
+        }
+    },
+    { 
+        summary: 'Steven Tyler', 
+        start: {
+            dateTime: '2020-03-15T00:15:00+01:00'
+        },
+        end: {
+            dateTime: '2020-03-15T01:15:00+01:0'
+        }
+    },
+  ];
+
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '454882688468-8q009r6uk11poenblrh2clh9gfn9gr9t.apps.googleusercontent.com';
 var API_KEY = 'AIzaSyDJDZ8bb6thsrCpYlqr6oO-_XVPDy3Qwi8';
@@ -103,7 +143,7 @@ function listUpcomingEvents() {
     'maxResults': 10,
     'orderBy': 'startTime'
   }).then(function(response) {
-    var events = response.result.items;
+    var events = dummyCalendar.result.items;
     console.log(events);
     appendPre('Upcoming events:');
 
