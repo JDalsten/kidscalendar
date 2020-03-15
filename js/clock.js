@@ -33,7 +33,8 @@ const adjustScheduleScroll = (hours, minutes) => {
   for (i = 0; i < dayFormat.length; i++) {
    // dayFormat[i].style.transform = "translateY(" + amount + "px)";
 
-   listUpcomingEvents();
+   
   }
 }
 
+listUpcomingEvents();
