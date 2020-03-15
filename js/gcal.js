@@ -104,6 +104,7 @@ function listUpcomingEvents() {
     'orderBy': 'startTime'
   }).then(function(response) {
     var events = response.result.items;
+    console.log(events);
     appendPre('Upcoming events:');
 
     if (events.length > 0) {
