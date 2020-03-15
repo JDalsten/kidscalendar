@@ -156,13 +156,14 @@ function listUpcomingEvents() {
           when = event.start.date;
         }
         appendPre(event.summary + ' (' + when + ')')
-        return events;
+        
       }
     } else {
       appendPre('No upcoming events found.');
     }
+    return events;
   });
-  return events;
+  
   
 }
 
