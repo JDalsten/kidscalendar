@@ -162,6 +162,7 @@ function listUpcomingEvents() {
       appendPre('No upcoming events found.');
     }
   });
+  return events;
   
 }
 
