@@ -163,7 +163,7 @@ function listUpcomingEvents() {
       appendPre('No upcoming events found.');
     }
   }) */;
-  console.log(sessionList.result.items);
+  console.log(sessionList);
   return sessionList;
   }
 
@@ -172,4 +172,4 @@ const delaythis = () => {
   console.log(listUpcomingEvents());
   
 }
-console.log("new9");
+console.log("new10");
