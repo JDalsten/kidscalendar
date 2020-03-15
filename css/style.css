@@ -69,6 +69,7 @@ body {
 }
 
 #scheduleContainer {
+  padding: 0 10px;
   height: 70%;
   overflow-x: hidden;
   overflow-y: scroll;
