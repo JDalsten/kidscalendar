@@ -165,8 +165,8 @@ function listUpcomingEvents() {
       return ttts();   
 }
 
-console.log("new36");
+console.log("new37");
 
 const ttts = () => {
-    console.log(sessionList);
+    console.log("here goes",sessionList);
 }
