@@ -98,9 +98,8 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = "none";
     signoutButton.style.display = "block";
-   // listUpcomingEvents();
-    testme();
-
+    listUpcomingEvents();
+    
   } else {
     authorizeButton.style.display = "block";
     signoutButton.style.display = "none";
@@ -143,12 +142,11 @@ function appendPre(message) {
 
 
 function listUpcomingEvents() {
-  var tasty;
   var startDay = new Date();
   startDay.setHours(0, 0, 0, 0);
   var endDay = new Date();
   endDay.setHours(23, 59, 59, 999);
-  return gapi.client.calendar.events
+  gapi.client.calendar.events
     .list({
       calendarId: "primary",
       timeMin: startDay.toISOString(),
@@ -163,14 +161,12 @@ function listUpcomingEvents() {
         sessionList = response.result.items;
 
       },
-      function(err) { console.error("Execute error", err); });    
+      function(err) { console.error("Execute error", err); }); 
+      return ttts();   
 }
 
-console.log("new33");
+console.log("new35");
 
-const testme = () => {
-    listUpcomingEvents();
-    console.log("newfunc", sessionList);
+const ttts = () => {
+    console.log(sessionList);
 }
-testme();
-
