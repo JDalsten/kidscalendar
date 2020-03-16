@@ -35,7 +35,7 @@ const adjustScheduleScroll = (hours, minutes) => {
 };
 
 const dailySessions = sessions => {
-  currentSessionTimer(sessions);
+  
   let sessionHours = [];
   let i;
   for (i = 0; i < sessions.length; i++) {
@@ -66,7 +66,7 @@ const dailySessions = sessions => {
       summary: sessions[i].summary
     });
   }
-  return sessionHours;
+  return currentSessionTimer(sessionHours);
 };
 
 const currentSessionTimer = sessions => {
