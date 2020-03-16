@@ -1,6 +1,3 @@
-let sessionList; 
-
-
 // Client ID and API key from the Developer Console
 var CLIENT_ID =
   "454882688468-8q009r6uk11poenblrh2clh9gfn9gr9t.apps.googleusercontent.com";
@@ -101,9 +98,6 @@ function appendPre(message) {
  * appropriate message is printed.
  */
 
-
-
-
 function listUpcomingEvents() {
   var startDay = new Date();
   startDay.setHours(0, 0, 0, 0);
@@ -121,7 +115,7 @@ function listUpcomingEvents() {
     })
     .then(function(response) {
         // Handle the results here (response.result has the parsed body).
-        sessionList = response.result.items;
+        let sessionList = response.result.items;
         dailySessions(sessionList);
 
       },
@@ -129,8 +123,4 @@ function listUpcomingEvents() {
   
 }
 
-console.log("new39");
-
-const ttts = (message) => {
-    console.log("here goes nothing",message);
-}
+console.log("new40");
