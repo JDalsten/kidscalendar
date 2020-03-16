@@ -65,7 +65,7 @@ body {
 }
 .bar {
   position: absolute;
-  border: 0.08em solid #59968a;
+  border: 0.08em solid rgb(136,216,176);
   width: 0.84em;
   height: 0.84em;
   clip: rect(0em, 0.5em, 1em, 0em);
@@ -74,7 +74,7 @@ body {
 }
 .fill {
   position: absolute;
-  border: 0.08em solid #59968a;
+  border: 0.08em solid rgb(136,216,176);
   width: 0.84em;
   height: 0.84em;
   clip: rect(0em, 0.5em, 1em, 0em);
