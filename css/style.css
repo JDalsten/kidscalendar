@@ -207,7 +207,7 @@ body {
   position: absolute;
   width: 270px;
   border-radius: 15px;
-  background-color: aquamarine;
+  background-color: rgb(136,216,176);
 }
 
 .sessionText {
@@ -215,6 +215,12 @@ body {
   margin: 10px 0 0 10px;
 }
 
+#today > div:nth-last-of-type(4) {
+  background-color: rgb(255,111,105);
+}
+#today > div:nth-last-of-type(2) {
+  background-color: rgb(255,204,92);
+}
 #today > div:nth-last-of-type(3) {
   background-color: rgb(160, 121, 197);
 }
