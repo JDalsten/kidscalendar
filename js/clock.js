@@ -49,11 +49,14 @@ const dailySessions = sessions => {
     let sessionHeight = (2000 / 1440) * duration;
     let sessionLocation = (2000 / 1440) * startTimeInMinutes;
     let sessionEle = document.createElement("DIV");
+    let sessionEleText = document.createElement("P");
     sessionEle.classList.add("session");
+    sessionEleText.classList.add("sessionText")
     let today = document.querySelector("#today");
     today.appendChild(sessionEle);
+    sessionEle.appendChild(sessionEleText);
     sessionEle.style.top = sessionLocation + 70; //the +70 is to compensate for padding
-    sessionEle.style.height = sessionHeight;
-    sessionEle.textContent = sessions[i].summary;
+    sessionEle.style.height = sessionHeight-2;
+    sessionEleText.textContent = sessions[i].summary;
   }
 };

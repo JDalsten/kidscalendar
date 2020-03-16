@@ -210,6 +210,10 @@ body {
   background-color: aquamarine;
 }
 
+.sessionText {
+  margin-left: 10px;
+}
+
 #today > div:nth-last-of-type(3) {
   background-color: rgb(160, 121, 197);
 }
