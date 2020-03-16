@@ -26,14 +26,17 @@ const adjustScheduleScroll = (hours, minutes) => {
   let amount = -(2000 / 1440) * timeInMinutes;
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
-  let currentTimeLineContainer = document.querySelector(".currentTimeLineContainer");
+  let currentTimeLineContainer = document.querySelector(
+    ".currentTimeLineContainer"
+  );
   currentTimeLineContainer.style.top = (amount - 59.5) * -1;
   let currentTimeLine = document.querySelector(".currentTimeLine");
   currentTimeLine.textContent = `${checkTime(hours)}:${checkTime(minutes)}`;
-
 };
 
 const dailySessions = sessions => {
+  currentSessionTimer(sessions);
+  let sessionHours = [];
   let i;
   for (i = 0; i < sessions.length; i++) {
     let startDate = sessions[i].start.dateTime;
@@ -50,19 +53,22 @@ const dailySessions = sessions => {
     let sessionEle = document.createElement("DIV");
     let sessionEleText = document.createElement("P");
     sessionEle.classList.add("session");
-    sessionEleText.classList.add("sessionText")
+    sessionEleText.classList.add("sessionText");
     let today = document.querySelector("#today");
     today.appendChild(sessionEle);
     sessionEle.appendChild(sessionEleText);
     sessionEle.style.top = sessionLocation + 70; //the +70 is to compensate for padding
-    sessionEle.style.height = sessionHeight-2;
+    sessionEle.style.height = sessionHeight - 2;
     sessionEleText.textContent = sessions[i].summary;
-    currentSessionTimer(sessions);
+    sessionHours.push({
+      sessionStartMin: startTimeInMinutes,
+      sessionEndMin: endTimeInMinutes,
+      summary: sessions[i].summary;
+    });
   }
 };
 
-const currentSessionTimer = (sessions) => {
+const currentSessionTimer = sessions => {
   console.log("test", sessions);
   var t = setTimeout(currentSessionTimer, 8000);
-
 };
