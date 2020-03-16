@@ -26,12 +26,11 @@ const adjustScheduleScroll = (hours, minutes) => {
   let amount = -(2000 / 1440) * timeInMinutes;
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
-  let currentTimeLineContainer = document.querySelector(
-    ".currentTimeLineContainer"
-  );
+  let currentTimeLineContainer = document.querySelector(".currentTimeLineContainer");
   currentTimeLineContainer.style.top = (amount - 59.5) * -1;
   let currentTimeLine = document.querySelector(".currentTimeLine");
   currentTimeLine.textContent = `${checkTime(hours)}:${checkTime(minutes)}`;
+
 };
 
 const dailySessions = sessions => {
@@ -59,4 +58,10 @@ const dailySessions = sessions => {
     sessionEle.style.height = sessionHeight-2;
     sessionEleText.textContent = sessions[i].summary;
   }
+};
+
+const test = () => {
+  alert(userSessions);
+  var t = setTimeout(startTime, 8000);
+
 };

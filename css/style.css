@@ -266,7 +266,7 @@ body {
         height: 3000px;
     }
 }
-li, a {
+#menu > li, a {
     margin: 75px 0 -55px 0;
     color: rgb(131, 76, 136);
     font: 14pt "Roboto", sans-serif;
@@ -278,14 +278,20 @@ li, a {
     outline: 0;
     display: none;
 }
-li {
+#menu > li {
     width: 100%;
   }
-a:focus {
+#menu > a:focus {
     display: block;
     color: rgb(131, 76, 136);
     background-color: #eee;
     transition: all .5s;
+}
+
+.gcalButton {
+  position: absolute;
+  top:10px;
+  left: 10px;
 }
 
 
