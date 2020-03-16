@@ -139,7 +139,7 @@ function appendPre(message) {
  */
 
 
-let sessionList; 
+
 
 function listUpcomingEvents() {
   var tasty;
@@ -165,10 +165,11 @@ function listUpcomingEvents() {
       function(err) { console.error("Execute error", err); });    
 }
 
-console.log("new31");
+console.log("new32");
 
 const testme = () => {
     listUpcomingEvents();
     console.log("newfunc", sessionList);
 }
 testme();
+let sessionList; 
