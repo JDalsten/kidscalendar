@@ -262,7 +262,7 @@ body {
 }
 li, a {
     margin: 75px 0 -55px 0;
-    color: #03A9F4;
+    color: #000;
     font: 14pt "Roboto", sans-serif;
     font-weight: 700;
     line-height: 1.8;
@@ -287,7 +287,7 @@ a:focus {
     position: absolute;
     top: 25px;
     right: 25px;
-    background: #03A9F4;
+    background: #000;
     width: 30px;
     height: 5px;
     transition: .2s ease;
@@ -336,7 +336,6 @@ a:focus {
     height: 110px;
     background-color: #f2f1f8;
     border-bottom-left-radius: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 
     z-index: 5;
 }
