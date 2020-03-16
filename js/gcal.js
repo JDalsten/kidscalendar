@@ -159,14 +159,15 @@ function listUpcomingEvents() {
     .then(function(response) {
         // Handle the results here (response.result has the parsed body).
         sessionList = response.result.items;
+        ttts (sessionList);
 
       },
       function(err) { console.error("Execute error", err); }); 
-      return ttts();   
+  
 }
 
-console.log("new37");
+console.log("new38");
 
-const ttts = () => {
-    console.log("here goes",sessionList);
+const ttts = (message) => {
+    console.log("here goes nothing",message);
 }
