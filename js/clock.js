@@ -66,6 +66,7 @@ const dailySessions = sessions => {
       summary: sessions[i].summary
     });
   }
+  return sessionHours;
 };
 
 const currentSessionTimer = sessions => {
