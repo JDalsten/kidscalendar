@@ -2,19 +2,19 @@ const dummyCalendar = [
   {
     summary: "Steven Tyler",
     start: {
-      dateTime: "2020-03-16T15:30:00+01:00"
+      dateTime: "2020-03-16T15:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T16:45:00+01:0"
+      dateTime: "2020-03-16T16:00:00+01:0"
     }
   },
   {
     summary: "Steven Tyler",
     start: {
-      dateTime: "2020-03-16T06:15:00+01:00"
+      dateTime: "2020-03-16T16:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T08:15:00+01:0"
+      dateTime: "2020-03-16T17:15:00+01:0"
     }
   },
   {

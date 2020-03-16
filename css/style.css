@@ -206,5 +206,10 @@ body {
   align-self: center;
   position: absolute;
   width: 200px;
+  border-radius: 15px;
   background-color: aquamarine;
+}
+
+#today > div:nth-last-of-type(3) {
+  background-color: rgb(160, 121, 197);
 }
