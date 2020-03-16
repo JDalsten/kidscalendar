@@ -63,7 +63,7 @@ const dailySessions = sessions => {
     sessionHours.push({
       sessionStartMin: startTimeInMinutes,
       sessionEndMin: endTimeInMinutes,
-      summary: sessions[i].summary;
+      summary: sessions[i].summary
     });
   }
 };
