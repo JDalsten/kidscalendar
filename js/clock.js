@@ -61,7 +61,7 @@ const dailySessions = sessions => {
 };
 
 const test = () => {
-  alert(userSessions);
+  console.log(userSessions);
   var t = setTimeout(test, 8000);
 
 };
