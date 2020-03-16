@@ -97,7 +97,9 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = "none";
     signoutButton.style.display = "block";
-    listUpcomingEvents();
+   // listUpcomingEvents();
+    testme();
+
   } else {
     authorizeButton.style.display = "block";
     signoutButton.style.display = "none";
@@ -163,7 +165,7 @@ function listUpcomingEvents() {
       function(err) { console.error("Execute error", err); });    
 }
 
-console.log("new30");
+console.log("new31");
 
 const testme = () => {
     listUpcomingEvents();
