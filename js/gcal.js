@@ -1,3 +1,4 @@
+let sessionList; 
 const dummyCalendar = [
   {
     summary: "Steven Tyler",
@@ -165,11 +166,11 @@ function listUpcomingEvents() {
       function(err) { console.error("Execute error", err); });    
 }
 
-console.log("new32");
+console.log("new33");
 
 const testme = () => {
     listUpcomingEvents();
     console.log("newfunc", sessionList);
 }
 testme();
-let sessionList; 
+
