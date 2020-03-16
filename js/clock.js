@@ -47,12 +47,12 @@ const dailySessions = sessions => {
     let endTimeInMinutes = endHour * 60 + endMin;
     let duration = endTimeInMinutes - startTimeInMinutes;
     let sessionHeight = (2000 / 1440) * duration;
-    console.log(sessionHeight);
     let sessionLocation = (2000 / 1440) * startTimeInMinutes;
     let sessionEle = document.createElement("DIV");
     sessionEle.classList.add("session");
     let today = document.querySelector("#today");
     today.appendChild(sessionEle);
     sessionEle.style.top = sessionLocation + 70; //the +70 is to compensate for padding
+    sessionEle.style.height = sessionHeight;
   }
 };
