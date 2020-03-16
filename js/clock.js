@@ -54,5 +54,6 @@ const dailySessions = sessions => {
     today.appendChild(sessionEle);
     sessionEle.style.top = sessionLocation + 70; //the +70 is to compensate for padding
     sessionEle.style.height = sessionHeight;
+    sessionEle.textContent = sessions[i].summary;
   }
 };
