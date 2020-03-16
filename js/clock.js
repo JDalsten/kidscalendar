@@ -30,10 +30,10 @@ const adjustScheduleScroll = (hours, minutes) => {
   currentTimeLine.textContent = `${checkTime(hours)}:${checkTime(minutes)}`;
 }
 
-const dailySessions = () => {
+const dailySessions = (sessions) => {
   let i;
-  for (i = 0; i < dummyCalendar.length; i++) {
-    let dumDate = dummyCalendar[i].start.dateTime;
+  for (i = 0; i < sessions.length; i++) {
+    let dumDate = sessions[i].start.dateTime;
   let dumHour = Number(dumDate.substr(11, 2));
   let dumMin = Number(dumDate.substr(14, 2));
 
@@ -49,4 +49,4 @@ const dailySessions = () => {
   
 }
 
-dailySessions();
+

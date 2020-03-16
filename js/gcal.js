@@ -1,42 +1,5 @@
 let sessionList; 
-const dummyCalendar = [
-  {
-    summary: "Steven Tyler",
-    start: {
-      dateTime: "2020-03-15T15:30:00+01:00"
-    },
-    end: {
-      dateTime: "2020-03-15T01:15:00+01:0"
-    }
-  },
-  {
-    summary: "Steven Tyler",
-    start: {
-      dateTime: "2020-03-15T06:15:00+01:00"
-    },
-    end: {
-      dateTime: "2020-03-15T01:15:00+01:0"
-    }
-  },
-  {
-    summary: "Steven Tyler",
-    start: {
-      dateTime: "2020-03-15T22:00:00+01:00"
-    },
-    end: {
-      dateTime: "2020-03-15T01:15:00+01:0"
-    }
-  },
-  {
-    summary: "Steven Tyler",
-    start: {
-      dateTime: "2020-03-15T18:45:00+01:00"
-    },
-    end: {
-      dateTime: "2020-03-15T01:15:00+01:0"
-    }
-  }
-];
+
 
 // Client ID and API key from the Developer Console
 var CLIENT_ID =
@@ -159,7 +122,7 @@ function listUpcomingEvents() {
     .then(function(response) {
         // Handle the results here (response.result has the parsed body).
         sessionList = response.result.items;
-        ttts(sessionList);
+        dailySessions(sessionList);
 
       },
       function(err) { console.error("Execute error", err); }); 
