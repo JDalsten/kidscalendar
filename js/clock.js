@@ -43,9 +43,12 @@ const dailySessions = sessions => {
     let endDate = sessions[i].end.dateTime;
     let endHour = Number(endDate.substr(11, 2));
     let endMin = Number(endDate.substr(14, 2));
-
-    let timeInMinutes = startHour * 60 + startMin;
-    let sessionLocation = (2000 / 1440) * timeInMinutes;
+    let startTimeInMinutes = startHour * 60 + startMin;
+    let endTimeInMinutes = endHour * 60 + endMin;
+    let duration = endTimeInMinutes - startTimeInMinutes;
+    let sessionHeight = (2000 / 1440) * duration;
+    console.log(sessionHeight);
+    let sessionLocation = (2000 / 1440) * startTimeInMinutes;
     let sessionEle = document.createElement("DIV");
     sessionEle.classList.add("session");
     let today = document.querySelector("#today");
