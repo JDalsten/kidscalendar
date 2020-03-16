@@ -163,6 +163,10 @@ function listUpcomingEvents() {
       function(err) { console.error("Execute error", err); });    
 }
 
-console.log("new29");
+console.log("new30");
 
-
+const testme = () => {
+    listUpcomingEvents();
+    console.log("newfunc", sessionList);
+}
+testme();
