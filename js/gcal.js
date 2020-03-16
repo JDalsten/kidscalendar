@@ -120,12 +120,9 @@ function listUpcomingEvents() {
         let sessionList = response.result.items;
         userSessions = sessionList;
         dailySessions(sessionList);
-        test();
-        console.log(sessionList);
-
       },
       function(err) { console.error("Execute error", err); }); 
   
 }
 
-console.log("new44");
+console.log("new45");

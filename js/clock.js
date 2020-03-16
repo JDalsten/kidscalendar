@@ -57,11 +57,12 @@ const dailySessions = sessions => {
     sessionEle.style.top = sessionLocation + 70; //the +70 is to compensate for padding
     sessionEle.style.height = sessionHeight-2;
     sessionEleText.textContent = sessions[i].summary;
+    currentSessionTimer(sessions);
   }
 };
 
-const test = () => {
-  console.log(userSessions);
-  var t = setTimeout(test, 8000);
+const currentSessionTimer = (sessions) => {
+  console.log("test", sessions);
+  var t = setTimeout(currentSessionTimer, 8000);
 
 };
