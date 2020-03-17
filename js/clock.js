@@ -31,6 +31,10 @@ const checkTime = i => {
 
 const checkForActiveSession = (timeMin) => {
   console.log("timeMin:", timeMin)
+  let i;
+  for (i = 0; i < userSessions.length; i++) {
+    
+  }
 }
 
 const adjustScheduleScroll = (hours, minutes, timeMin) => {
@@ -80,6 +84,9 @@ const dailySessions = sessions => {
   return currentSessionTimer(sessionHours);
 };
 
-const setUserSessions = (sessions) => {
-  userSessions = sessions;
+const currentSessionTimer = (todaysSessions) => {
+  console.log("hey");
 };
+
+
+
