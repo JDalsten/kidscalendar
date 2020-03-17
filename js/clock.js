@@ -9,13 +9,14 @@ const updater = () => {
   h = checkTime(h);
   m = checkTime(m);
   s = checkTime(s);
+  let timeInMin = h * 60 + m;
   document.querySelector("#clock").textContent = `${h}:${m}:${s}`;
-  adjustScheduleScroll(h * 1, m * 1);
+  adjustScheduleScroll(h * 1, m * 1, timeInMin);
   //adjustScheduleScroll(03,02);
   if (userSessions == null) {
   console.log("waiting")
 } else {
-  console.log(userSessions);
+  checkForActiveSession(timeInMin);
 }
   var t = setTimeout(updater, 1000);
 };
@@ -28,10 +29,12 @@ const checkTime = i => {
   return i;
 };
 
+const checkForActiveSession = (timeMin) => {
+  console.log("timeMin:", timeMin)
+}
 
-const adjustScheduleScroll = (hours, minutes) => {
-  let timeInMinutes = hours * 60 + minutes;
-  let amount = -(2000 / 1440) * timeInMinutes;
+const adjustScheduleScroll = (hours, minutes, timeMin) => {
+  let amount = -(2000 / 1440) * timeMin;
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
   let currentTimeLineContainer = document.querySelector(
