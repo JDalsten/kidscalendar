@@ -19,7 +19,6 @@ const sessionRemaining = (percentage) => {
     if (slice.querySelector(".bar") === null) {
       let barClass = document.createElement("div");
     barClass.classList.add("bar");
-    console.log(barClass);
     slice.appendChild(barClass);
     document.querySelector(".fill").style.transform = "rotate(180deg)";
     document.querySelector(".bar").style.transform = "rotate("+fval+"deg)";
@@ -33,7 +32,6 @@ const sessionRemaining = (percentage) => {
   else {
     let val = 180/50;
     let fval = val*txtboxval;
-    fval = fval;
     document.querySelector(".slice");
     let slice = document.querySelector(".slice");
     let bar = slice.querySelector(".bar");
@@ -41,9 +39,11 @@ const sessionRemaining = (percentage) => {
       bar.remove();
       slice.style.clip = "rect(0em, 1em, 1em, 0.5em)";
       document.querySelector(".fill").style.transform = "rotate("+fval+"deg)";
+      console.log("1");
     } else {
       slice.style.clip = "rect(0em, 1em, 1em, 0.5em)";
       document.querySelector(".fill").style.transform = "rotate("+fval+"deg)";
+
     }
   }
 }

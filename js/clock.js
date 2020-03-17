@@ -45,12 +45,12 @@ const checkForActiveSession = (timeSec) => {
 
 const updateActiveSession = (index,timeSec) => {
   if (todaysSessions[index].id !== currentActiveSession.id) {
-    console.log("hurray");
+
     currentActiveSession = todaysSessions[index];
     document.querySelector("#activeEvent").textContent = todaysSessions[index].summary;
     }
   else {
-    console.log("same session - dont update");
+
     let sessionLength = currentActiveSession.sessionEndSec - currentActiveSession.sessionStartSec;
     let sessionProgress = timeSec - currentActiveSession.sessionStartSec;
     let sessionProgressPercentage = sessionProgress/sessionLength*100;
@@ -71,18 +71,19 @@ const adjustScheduleScroll = (hours, minutes, seconds ,timeSec) => {
 };
 
 const dailySessions = sessions => {
-  console.log(sessions);
   let sessionHours = [];
   let i;
   for (i = 0; i < sessions.length; i++) {
     let startDate = sessions[i].start.dateTime;
     let startHour = Number(startDate.substr(11, 2));
     let startMin = Number(startDate.substr(14, 2));
+    let startSec = Number(startDate.substr(17, 2));
     let endDate = sessions[i].end.dateTime;
     let endHour = Number(endDate.substr(11, 2));
     let endMin = Number(endDate.substr(14, 2));
-    let startTimeInSeconds = startHour * 60 * 60 + startMin*60;
-    let endTimeInSeconds = endHour * 60 * 60 + endMin*60;
+    let endSec = Number(endDate.substr(17, 2));
+    let startTimeInSeconds = startHour * 60 * 60 + startMin*60 +startSec;
+    let endTimeInSeconds = endHour * 60 * 60 + endMin*60 +endSec;
     let duration = endTimeInSeconds - startTimeInSeconds;
     let sessionHeight = (2000 / 86400) * duration;
     let sessionLocation = (2000 / 86400) * startTimeInSeconds;

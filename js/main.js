@@ -5,7 +5,7 @@ const dummyCalendar = [
       dateTime: "2020-03-16T00:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T02:00:00+01:0"
+      dateTime: "2020-03-16T02:00:00+01:00"
     },
     id: "12312231"
   },
@@ -15,7 +15,7 @@ const dummyCalendar = [
       dateTime: "2020-03-16T03:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T04:15:00+01:0"
+      dateTime: "2020-03-16T04:15:00+01:00"
     },
     id: "13231231"
   },
@@ -25,7 +25,7 @@ const dummyCalendar = [
       dateTime: "2020-03-16T06:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T08:00:00+01:0"
+      dateTime: "2020-03-16T08:00:00+01:00"
     },
     id: "1431231"
   },
@@ -35,7 +35,7 @@ const dummyCalendar = [
       dateTime: "2020-03-16T08:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T09:00:00+01:0"
+      dateTime: "2020-03-16T09:00:00+01:00"
     },
     id: "12531231"
   },
@@ -45,7 +45,7 @@ const dummyCalendar = [
       dateTime: "2020-03-16T09:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T11:00:00+01:0"
+      dateTime: "2020-03-16T11:00:00+01:00"
     },
     id: "12316231"
   },
@@ -55,7 +55,7 @@ const dummyCalendar = [
       dateTime: "2020-03-16T11:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T12:00:00+01:0"
+      dateTime: "2020-03-16T12:00:00+01:00"
     },
     id: "12371231"
   },
@@ -65,7 +65,7 @@ const dummyCalendar = [
       dateTime: "2020-03-16T12:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T12:33:00+01:0"
+      dateTime: "2020-03-16T12:33:00+01:00"
     },
     id: "12381231"
   },
@@ -75,17 +75,17 @@ const dummyCalendar = [
       dateTime: "2020-03-16T12:33:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T13:53:00+01:0"
+      dateTime: "2020-03-16T14:32:00+01:00"
     },
     id: "1238123s1"
   },
   {
     summary: "Event #9",
     start: {
-      dateTime: "2020-03-16T13:53:00+01:00"
+      dateTime: "2020-03-16T14:32:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T15:00:00+01:0"
+      dateTime: "2020-03-16T16:00:00+01:00"
     },
     id: "12381s23s1"
   }
