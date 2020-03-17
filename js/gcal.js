@@ -117,10 +117,10 @@ function listUpcomingEvents() {
         // Handle the results here (response.result has the parsed body).
         let sessionList = response.result.items;
 
-        dailySessions(sessionList);
+        setUserSessions(sessionList);
       },
       function(err) { console.error("Execute error", err); }); 
   
 }
 
-console.log("new48");
+console.log("new49");

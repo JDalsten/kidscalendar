@@ -12,7 +12,11 @@ const updater = () => {
   document.querySelector("#clock").textContent = `${h}:${m}:${s}`;
   adjustScheduleScroll(h * 1, m * 1);
   //adjustScheduleScroll(03,02);
-  console.log("waiting", userSessions)
+  if (userSessions == null) {
+  console.log("waiting")
+} else {
+  console.log(userSessions);
+}
   var t = setTimeout(updater, 1000);
 };
 
@@ -73,6 +77,6 @@ const dailySessions = sessions => {
   return currentSessionTimer(sessionHours);
 };
 
-const currentSessionTimer = (sessions) => {
+const setUserSessions = (sessions) => {
   userSessions = sessions;
 };
