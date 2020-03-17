@@ -175,6 +175,7 @@ body {
   align-items: center;
   text-align: center;
   font-weight: 500;
+  
 }
 .currentTimeLine::before,
 .currentTimeLine::after {
@@ -359,4 +360,8 @@ body {
 }
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
     display: none;
+}
+
+#activeEvent {
+
 }
