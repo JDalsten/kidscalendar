@@ -1,4 +1,4 @@
-let userSessions;
+let todaysSessions;
 
 
 const updater = () => {
@@ -81,11 +81,11 @@ const dailySessions = sessions => {
       summary: sessions[i].summary
     });
   }
-  return currentSessionTimer(sessionHours);
+  return setDailySession(sessionHours);
 };
 
-const currentSessionTimer = (todaysSessions) => {
-  console.log("hey");
+const setDailySession = (sessions) => {
+  todaysSessions = sessions;
 };
 
 
