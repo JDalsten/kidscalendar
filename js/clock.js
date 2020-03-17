@@ -1,5 +1,5 @@
 let todaysSessions;
-let currentActiveSession;
+let currentActiveSession = {sessionStartMin:null, sessionEndMin:null, id:null, summary:null};
 
 
 const updater = () => {
@@ -37,17 +37,23 @@ const checkForActiveSession = (timeMin) => {
     if (todaysSessions[i].sessionStartMin<timeMin){
     
     if (todaysSessions[i].sessionEndMin>timeMin) {
-      updateActiveSession(todaysSessions[i]).id;
-      console.log(todaysSessions[i].summary);
+      updateActiveSession(i);
     }
-  }
-}}
+  } 
+ } 
 
-const updateActiveSession = (sessionId) => {
-  console.log(sessionId);
+}
+
+const updateActiveSession = (index) => {
+  console.log(index);
   console.log(currentActiveSession);
-  if (sessionId !== currentActiveSession) {
+  if (todaysSessions[index].id !== currentActiveSession.id) {
     console.log("hurray");
+    currentActiveSession = todaysSessions[index];
+    document.querySelector("#activeEvent").textContent = todaysSessions[index].summary;
+    }
+  else {
+    console.log("same session - dont update");
   }
 }
 
@@ -92,7 +98,7 @@ const dailySessions = sessions => {
     sessionHours.push({
       sessionStartMin: startTimeInMinutes,
       sessionEndMin: endTimeInMinutes,
-      sessionId: sessions[i].id,
+      id: sessions[i].id,
       summary: sessions[i].summary
     });
   }

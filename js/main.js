@@ -6,7 +6,8 @@ const dummyCalendar = [
     },
     end: {
       dateTime: "2020-03-16T02:00:00+01:0"
-    }
+    },
+    id: "12312231"
   },
   {
     summary: "Event #2",
@@ -15,7 +16,8 @@ const dummyCalendar = [
     },
     end: {
       dateTime: "2020-03-16T04:15:00+01:0"
-    }
+    },
+    id: "13231231"
   },
   {
     summary: "Event #3",
@@ -24,7 +26,8 @@ const dummyCalendar = [
     },
     end: {
       dateTime: "2020-03-16T08:00:00+01:0"
-    }
+    },
+    id: "1431231"
   },
   {
     summary: "Event #4",
@@ -33,7 +36,8 @@ const dummyCalendar = [
     },
     end: {
       dateTime: "2020-03-16T09:00:00+01:0"
-    }
+    },
+    id: "12531231"
   },
   {
     summary: "Event #5",
@@ -42,7 +46,8 @@ const dummyCalendar = [
     },
     end: {
       dateTime: "2020-03-16T11:00:00+01:0"
-    }
+    },
+    id: "12316231"
   },
   {
     summary: "Event #6",
@@ -51,16 +56,28 @@ const dummyCalendar = [
     },
     end: {
       dateTime: "2020-03-16T12:00:00+01:0"
-    }
+    },
+    id: "12371231"
   },
   {
     summary: "Event #7",
     start: {
-      dateTime: "2020-03-16T13:00:00+01:00"
+      dateTime: "2020-03-16T12:00:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T16:00:00+01:0"
-    }
+      dateTime: "2020-03-16T12:33:00+01:0"
+    },
+    id: "12381231"
+  },
+  {
+    summary: "Event #8",
+    start: {
+      dateTime: "2020-03-16T12:33:00+01:00"
+    },
+    end: {
+      dateTime: "2020-03-16T13:34:00+01:0"
+    },
+    id: "1238123s1"
   }
 ];
 
