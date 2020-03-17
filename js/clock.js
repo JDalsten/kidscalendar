@@ -1,5 +1,5 @@
 let todaysSessions;
-let currentActiveSession
+let currentActiveSession;
 
 
 const updater = () => {
@@ -37,12 +37,19 @@ const checkForActiveSession = (timeMin) => {
     if (todaysSessions[i].sessionStartMin<timeMin){
     
     if (todaysSessions[i].sessionEndMin>timeMin) {
+      updateActiveSession(todaysSessions[i]).id;
       console.log(todaysSessions[i].summary);
     }
   }
 }}
 
-//updateActiveSession = (se)
+const updateActiveSession = (sessionId) => {
+  console.log(sessionId);
+  console.log(currentActiveSession);
+  if (sessionId !== currentActiveSession) {
+    console.log("hurray");
+  }
+}
 
 const adjustScheduleScroll = (hours, minutes, timeMin) => {
   let amount = -(2000 / 1440) * timeMin;
@@ -85,6 +92,7 @@ const dailySessions = sessions => {
     sessionHours.push({
       sessionStartMin: startTimeInMinutes,
       sessionEndMin: endTimeInMinutes,
+      sessionId: sessions[i].id,
       summary: sessions[i].summary
     });
   }
