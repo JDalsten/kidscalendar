@@ -13,7 +13,7 @@ const updater = () => {
   document.querySelector("#clock").textContent = `${h}:${m}:${s}`;
   adjustScheduleScroll(h * 1, m * 1, timeInMin);
   //adjustScheduleScroll(03,02);
-  if (userSessions == null) {
+  if (todaysSessions == null) {
   console.log("waiting")
 } else {
   checkForActiveSession(timeInMin);
