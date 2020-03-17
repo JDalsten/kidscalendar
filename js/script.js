@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function(){
 const sessionRemaining = (percentage) => {
   let txtboxval = percentage;
   if (txtboxval > 50) {
-    console.log("higsher");
     txtboxval = txtboxval-50;
     let val = 180/50;
     let fval = val*txtboxval;
@@ -32,7 +31,6 @@ const sessionRemaining = (percentage) => {
     
   }
   else {
-    console.log("lower");
     let val = 180/50;
     let fval = val*txtboxval;
     fval = fval;
