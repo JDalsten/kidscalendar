@@ -1,5 +1,7 @@
-// Keeps track of the current time
-const startTime = () => {
+let userSessions;
+
+
+const updater = () => {
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
@@ -10,7 +12,8 @@ const startTime = () => {
   document.querySelector("#clock").textContent = `${h}:${m}:${s}`;
   adjustScheduleScroll(h * 1, m * 1);
   //adjustScheduleScroll(03,02);
-  var t = setTimeout(startTime, 1000);
+  console.log("waiting", userSessions)
+  var t = setTimeout(updater, 1000);
 };
 
 //Adds zero in front of numbers < 10
@@ -20,6 +23,7 @@ const checkTime = i => {
   }
   return i;
 };
+
 
 const adjustScheduleScroll = (hours, minutes) => {
   let timeInMinutes = hours * 60 + minutes;
@@ -69,7 +73,6 @@ const dailySessions = sessions => {
   return currentSessionTimer(sessionHours);
 };
 
-const currentSessionTimer = sessions => {
-  console.log("test", sessions);
-  var t = setTimeout(currentSessionTimer, 8000);
+const currentSessionTimer = (sessions) => {
+  userSessions = sessions;
 };

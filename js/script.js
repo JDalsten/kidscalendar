@@ -2,7 +2,7 @@
 
 // Initialise functions on load
 document.addEventListener("DOMContentLoaded", function(){
-  startTime();
+  updater();
   let timelineAnchor = document.querySelector(".currentTimeLineOffset");
   timelineAnchor.scrollIntoView();
 });

@@ -1,5 +1,3 @@
-let userSessions;
-
 // Client ID and API key from the Developer Console
 var CLIENT_ID =
   "454882688468-8q009r6uk11poenblrh2clh9gfn9gr9t.apps.googleusercontent.com";
@@ -118,11 +116,11 @@ function listUpcomingEvents() {
     .then(function(response) {
         // Handle the results here (response.result has the parsed body).
         let sessionList = response.result.items;
-        userSessions = sessionList;
+
         dailySessions(sessionList);
       },
       function(err) { console.error("Execute error", err); }); 
   
 }
 
-console.log("new47");
+console.log("new48");
