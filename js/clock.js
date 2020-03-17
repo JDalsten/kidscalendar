@@ -1,6 +1,11 @@
 let todaysSessions;
-let currentActiveSession = {sessionStartSec:null, sessionEndSec:null, id:null, summary:null};
-
+let currentActiveSession = {
+  sessionStartSec: null,
+  sessionEndSec: null,
+  id: null,
+  summary: null,
+  theme: null
+};
 
 const updater = () => {
   var today = new Date();
@@ -12,13 +17,13 @@ const updater = () => {
   m = checkTime(m);
   s = checkTime(s);
   document.querySelector("#clock").textContent = `${h}:${m}:${s}`;
-  adjustScheduleScroll(h * 1, m * 1, s * 1 ,timeInSec);
+  adjustScheduleScroll(h * 1, m * 1, s * 1, timeInSec);
   //adjustScheduleScroll(03,02);
   if (todaysSessions == null) {
-  console.log("waiting")
-} else {
-  checkForActiveSession(timeInSec);
-}
+    console.log("waiting");
+  } else {
+    checkForActiveSession(timeInSec);
+  }
   var t = setTimeout(updater, 1000);
 };
 
@@ -30,35 +35,59 @@ const checkTime = i => {
   return i;
 };
 
-const checkForActiveSession = (timeSec) => {
+const checkForActiveSession = timeSec => {
   let i;
   for (i = 0; i < todaysSessions.length; i++) {
-    if (todaysSessions[i].sessionStartSec<timeSec){
+    if (todaysSessions[i].sessionStartSec < timeSec) {
+      
+      if (todaysSessions[i].sessionEndSec > timeSec) {
+        updateActiveSession(i, timeSec);
+      }
     
-    if (todaysSessions[i].sessionEndSec>timeSec) {
-      updateActiveSession(i,timeSec);
     }
-  } 
- } 
+  }
+};
 
-}
-
-const updateActiveSession = (index,timeSec) => {
+const updateActiveSession = (index, timeSec) => {
   if (todaysSessions[index].id !== currentActiveSession.id) {
-
     currentActiveSession = todaysSessions[index];
-    document.querySelector("#activeEvent").textContent = todaysSessions[index].summary;
-    }
-  else {
+    document.querySelector("#activeEvent").textContent =
+      todaysSessions[index].summary;
+      switch (todaysSessions[index].theme) {
+        case "food":
+          document.querySelector(".c100").style.backgroundImage = "url(images/lunch.svg)";
+          break;
+        
+          case "education":
+            document.querySelector(".c100").style.backgroundImage = "url(images/student.svg)";
+            break;
 
-    let sessionLength = currentActiveSession.sessionEndSec - currentActiveSession.sessionStartSec;
+            case "cartoons":
+          document.querySelector(".c100").style.backgroundImage = "url(images/television.svg)";
+          break;
+
+          case "play":
+          document.querySelector(".c100").style.backgroundImage = "url(images/lego.svg)";
+          break;
+
+          case "plnoneay":
+          document.querySelector(".c100").style.backgroundImage = "url(images/sun.svg)";
+          break;
+      
+        default:
+          document.querySelector(".c100").style.backgroundImage = "url(images/sun.svg)";
+          break;
+      }
+  } else {
+    let sessionLength =
+      currentActiveSession.sessionEndSec - currentActiveSession.sessionStartSec;
     let sessionProgress = timeSec - currentActiveSession.sessionStartSec;
-    let sessionProgressPercentage = sessionProgress/sessionLength*100;
+    let sessionProgressPercentage = (sessionProgress / sessionLength) * 100;
     sessionRemaining(sessionProgressPercentage);
   }
-}
+};
 
-const adjustScheduleScroll = (hours, minutes, seconds ,timeSec) => {
+const adjustScheduleScroll = (hours, minutes, seconds, timeSec) => {
   let amount = -(2000 / 86400) * timeSec;
   let dayFormat = document.querySelectorAll(".dayFormat");
   let schedule = document.querySelector("#schedule");
@@ -71,7 +100,7 @@ const adjustScheduleScroll = (hours, minutes, seconds ,timeSec) => {
 };
 
 const dailySessions = sessions => {
-  let sessionHours = [];
+  let sessionInfo = [];
   let i;
   for (i = 0; i < sessions.length; i++) {
     let startDate = sessions[i].start.dateTime;
@@ -82,13 +111,14 @@ const dailySessions = sessions => {
     let endHour = Number(endDate.substr(11, 2));
     let endMin = Number(endDate.substr(14, 2));
     let endSec = Number(endDate.substr(17, 2));
-    let startTimeInSeconds = startHour * 60 * 60 + startMin*60 +startSec;
-    let endTimeInSeconds = endHour * 60 * 60 + endMin*60 +endSec;
+    let startTimeInSeconds = startHour * 60 * 60 + startMin * 60 + startSec;
+    let endTimeInSeconds = endHour * 60 * 60 + endMin * 60 + endSec;
     let duration = endTimeInSeconds - startTimeInSeconds;
     let sessionHeight = (2000 / 86400) * duration;
     let sessionLocation = (2000 / 86400) * startTimeInSeconds;
     let sessionEle = document.createElement("DIV");
     let sessionEleText = document.createElement("P");
+    let sessionTheme;
     sessionEle.classList.add("session");
     sessionEleText.classList.add("sessionText");
     let today = document.querySelector("#today");
@@ -97,19 +127,43 @@ const dailySessions = sessions => {
     sessionEle.style.top = sessionLocation + 70; //the +70 is to compensate for padding
     sessionEle.style.height = sessionHeight - 2;
     sessionEleText.textContent = sessions[i].summary;
-    sessionHours.push({
+    lwcSummary = sessions[i].summary.toLowerCase();
+    if (
+      lwcSummary.includes("morgenmad") ||
+      lwcSummary.includes("formiddagsmad") ||
+      lwcSummary.includes("frokost") ||
+      lwcSummary.includes("aftenssmad") ||
+      lwcSummary.includes("eftermiddagsmad")
+    ) {
+      sessionTheme = "food";
+    } else if (lwcSummary.includes("skole") || lwcSummary.includes("opgaver")) {
+      sessionTheme = "education";
+    } else if (
+      lwcSummary.includes("tegnefilm") ||
+      lwcSummary.includes("disneysjov")
+    ) {
+      sessionTheme = "cartoons";
+    } else if (
+      lwcSummary.includes("leg") ||
+      lwcSummary.includes("lego") ||
+      lwcSummary.includes("lego")
+    ) {
+      sessionTheme = "play";
+    } else {
+      sessionTheme = "none";
+    }
+    sessionEle.classList.add("theme_" + sessionTheme);
+    sessionInfo.push({
       sessionStartSec: startTimeInSeconds,
       sessionEndSec: endTimeInSeconds,
       id: sessions[i].id,
-      summary: sessions[i].summary
+      summary: sessions[i].summary,
+      theme: sessionTheme
     });
   }
-  return setDailySession(sessionHours);
+  return setDailySession(sessionInfo);
 };
 
-const setDailySession = (sessions) => {
+const setDailySession = sessions => {
   todaysSessions = sessions;
 };
-
-
-

@@ -45,12 +45,14 @@ body {
   height: 1em;
   border-radius: 50%;
   background-color: #f2f1f8;
+  background-image: url(../images/lego.svg);
+  background-size: contain;
 
 }
 .c100:after {
   content: "";
   position: absolute;
-  background-image: url(../images/lunch.svg);
+
   /* background-color: #f2f1f8; */
   height: 0.84em;
   width: 0.84em;
@@ -119,6 +121,7 @@ body {
   background-color: #fff;
   border-radius: 35px;
 }
+
 
 #tomorrow {
   position: relative;
@@ -241,14 +244,34 @@ body {
   margin: 10px 0 0 10px;
 }
 
-#today > div:nth-last-of-type(4) {
+.theme_food {
+  background-color: rgb(130, 202, 148)
+}
+
+.theme_education {
   background-color: rgb(255,111,105);
 }
-#today > div:nth-last-of-type(2) {
+
+.theme_cartoons {
+  background-color: rgb(160, 121, 197)
+}
+
+.theme_play {
+  background-color: rgb(129, 191, 207)
+}
+
+.theme_none {
   background-color: rgb(255,204,92);
 }
+
+#today > div:nth-last-of-type(4) {
+  
+}
+#today > div:nth-last-of-type(2) {
+  
+}
 #today > div:nth-last-of-type(3) {
-  background-color: rgb(160, 121, 197);
+  ;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);

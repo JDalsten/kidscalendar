@@ -1,6 +1,6 @@
 const dummyCalendar = [
   {
-    summary: "Event #1",
+    summary: "Tegnefilm",
     start: {
       dateTime: "2020-03-16T00:00:00+01:00"
     },
@@ -10,7 +10,7 @@ const dummyCalendar = [
     id: "12312231"
   },
   {
-    summary: "Event #2",
+    summary: "Morgenmad",
     start: {
       dateTime: "2020-03-16T03:00:00+01:00"
     },
@@ -20,7 +20,7 @@ const dummyCalendar = [
     id: "13231231"
   },
   {
-    summary: "Event #3",
+    summary: "Agnes skole / E+V fri leg",
     start: {
       dateTime: "2020-03-16T06:00:00+01:00"
     },
@@ -30,7 +30,7 @@ const dummyCalendar = [
     id: "1431231"
   },
   {
-    summary: "Event #4",
+    summary: "Formiddagsmad",
     start: {
       dateTime: "2020-03-16T08:00:00+01:00"
     },
@@ -40,7 +40,7 @@ const dummyCalendar = [
     id: "12531231"
   },
   {
-    summary: "Event #5",
+    summary: "Agnes skole / E+V krea",
     start: {
       dateTime: "2020-03-16T09:00:00+01:00"
     },
@@ -50,7 +50,7 @@ const dummyCalendar = [
     id: "12316231"
   },
   {
-    summary: "Event #6",
+    summary: "Frokost",
     start: {
       dateTime: "2020-03-16T11:00:00+01:00"
     },
@@ -60,7 +60,7 @@ const dummyCalendar = [
     id: "12371231"
   },
   {
-    summary: "Event #7",
+    summary: "Fri leg / tur m. Berta",
     start: {
       dateTime: "2020-03-16T12:00:00+01:00"
     },
@@ -70,7 +70,7 @@ const dummyCalendar = [
     id: "12381231"
   },
   {
-    summary: "Event #8",
+    summary: "Dagens ?",
     start: {
       dateTime: "2020-03-16T12:33:00+01:00"
     },
@@ -82,12 +82,22 @@ const dummyCalendar = [
   {
     summary: "Event #9",
     start: {
-      dateTime: "2020-03-16T14:32:00+01:00"
+      dateTime: "2020-03-16T22:32:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T16:00:00+01:00"
+      dateTime: "2020-03-16T23:04:00+01:00"
     },
     id: "12381s23s1"
+  },
+  {
+    summary: "Event 10 frokost",
+    start: {
+      dateTime: "2020-03-16T23:04:00+01:00"
+    },
+    end: {
+      dateTime: "2020-03-16T23:30:00+01:00"
+    },
+    id: "1238s1s23s1"
   }
 ];
 
