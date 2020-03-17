@@ -31,22 +31,19 @@ const checkTime = i => {
 };
 
 const checkForActiveSession = (timeMin) => {
-  console.log("timeMin:", timeMin)
   let i;
   for (i = 0; i < todaysSessions.length; i++) {
     if (todaysSessions[i].sessionStartMin<timeMin){
     
     if (todaysSessions[i].sessionEndMin>timeMin) {
-      updateActiveSession(i);
+      updateActiveSession(i,timeMin);
     }
   } 
  } 
 
 }
 
-const updateActiveSession = (index) => {
-  console.log(index);
-  console.log(currentActiveSession);
+const updateActiveSession = (index,timeMin) => {
   if (todaysSessions[index].id !== currentActiveSession.id) {
     console.log("hurray");
     currentActiveSession = todaysSessions[index];
@@ -54,6 +51,10 @@ const updateActiveSession = (index) => {
     }
   else {
     console.log("same session - dont update");
+    let sessionLength = currentActiveSession.sessionEndMin - currentActiveSession.sessionStartMin;
+    let sessionProgress = timeMin - currentActiveSession.sessionStartMin;
+    let sessionProgressPercentage = sessionProgress/sessionLength*100;
+    sessionRemaining(sessionProgressPercentage);
   }
 }
 

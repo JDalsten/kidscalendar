@@ -75,9 +75,19 @@ const dummyCalendar = [
       dateTime: "2020-03-16T12:33:00+01:00"
     },
     end: {
-      dateTime: "2020-03-16T13:34:00+01:0"
+      dateTime: "2020-03-16T13:53:00+01:0"
     },
     id: "1238123s1"
+  },
+  {
+    summary: "Event #9",
+    start: {
+      dateTime: "2020-03-16T13:53:00+01:00"
+    },
+    end: {
+      dateTime: "2020-03-16T15:00:00+01:0"
+    },
+    id: "12381s23s1"
   }
 ];
 
