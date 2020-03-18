@@ -51,8 +51,7 @@ const checkForActiveSession = timeSec => {
 const updateActiveSession = (index, timeSec) => {
   if (todaysSessions[index].id !== currentActiveSession.id) {
     currentActiveSession = todaysSessions[index];
-    document.querySelector("#activeEvent").textContent =
-      todaysSessions[index].summary;
+    
       switch (todaysSessions[index].theme) {
         case "food":
           document.querySelector(".c100").style.backgroundImage = "url(images/lunch.svg)";
